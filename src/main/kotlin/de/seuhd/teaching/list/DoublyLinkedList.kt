@@ -92,10 +92,17 @@ class DoublyLinkedList {
     }
 
     /**
+     * Habe ich reingeschrieben, um das detekt zu fixen, macht warnlimit
+     */
+    companion object {
+        private const val INDEX_WARNING_LIMIT = 1000
+    }
+
+    /**
      * Returns the value at position [index].
      */
     fun get(index: Int): Double {
-        if(index > 1000) println("Index exceeds the limit")
+        if (index > INDEX_WARNING_LIMIT) println("Index exceeds the limit")
         if (index < 0 || index >= length) {
             throw IndexOutOfBoundsException("Index $index out of bounds for length $length")
         }
